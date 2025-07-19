@@ -2,6 +2,7 @@ const express = require('express')
 const app =express()
 const userRouter = require('./routes/user.routes.js')
 const database = require('./config/db.js')
+const bcrypt = require('bcrypt');
 
 
 database()//for database connectivity 
