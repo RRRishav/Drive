@@ -1,6 +1,10 @@
 const express = require('express')
 const app =express()
 const userRouter = require('./routes/user.routes.js')
+const database = require('./config/db.js')
+
+
+database()//for database connectivity 
 
 app.set('view engine','ejs')
 app.use(express.json())

@@ -7,13 +7,16 @@ router.get('/register',(req,res)=>{
 })
 
 router.post('/register',
-    body('email').trim().isEmail(),
+    body('email').trim().isEmail().isLength({min:6}),
     body('username').trim().isLength({min:3}),
-    body('password').trim().isLength({min:3}),
+    body('password').trim().isLength({min:5}),
     (req,res)=>{
 
     const errors = validationResult(req)
-
+    
+    if(!errors.isEmpty()){
+      return res.send('INVALID DATA')
+    }
    // console.log(errors)
 
     console.log(req.body);
