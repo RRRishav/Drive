@@ -14,8 +14,8 @@ router.post('/register',
 
     const errors = validationResult(req)
 
-    console.log(errors)
-    
+   // console.log(errors)
+
     console.log(req.body);
     res.send('user register')
 })
